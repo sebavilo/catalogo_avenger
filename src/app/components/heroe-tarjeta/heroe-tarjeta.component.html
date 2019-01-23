@@ -1,0 +1,14 @@
+<div class="card container animated fadeIn fast" >
+  <img class="card-img-top img-fluid" [src]="heroe.img"  [alt]="heroe.nombre">
+  <div class="card-block">
+    <h5 class="card-title">{{ heroe.nombre }}</h5>
+    <p class="card-text" *ngIf="heroe.bio.length<100">{{ heroe.bio | slice:0:100 }}</p>
+    <p class="card-text" *ngIf="heroe.bio.length>100">{{ heroe.bio | slice:0:100 }}...</p>
+
+    <p class="card-text"><small class="text-muted"><i>Año de creación: {{ heroe.aparicion | date: 'y' }}</i></small></p>
+
+    <button (click)="verHeroe()" type="button" class="btn btn-outline-primary btn-block">Ver más...</button>
+
+    <!--a [routerLink]="['/heroe',i]" class="btn btn-outline-primary btn-block">Ver más...</a-->
+  </div>
+</div>
